@@ -78,8 +78,8 @@ const Navbar = () => {
 
           {/* Saved */}
           <div className="flex items-center gap-2 rounded-full  px-4 py-2 text-gray-800">
-            <span className="text-sm text-white font-medium">Saved</span>
-            <span className="flex h-7 min-w-7 items-center justify-center rounded-full border text-white px-2 font-bold">
+            <span className="text-sm text-gray-400 font-medium">Saved</span>
+            <span className="flex h-7 min-w-7 items-center justify-center rounded-full border text-gray-400 px-2 font-bold">
               0
             </span>
           </div>
