@@ -59,30 +59,36 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <div className="flex space-x-2">
+          <Link href='/'>
+             <div className="flex space-x-2">
             <Image src={Logo} alt="logo" height={28} width={28}></Image>
             <p className="text-white text-[18px] font-bold">FITLOG</p>
           </div>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end flex items-center gap-3">
           {/* Plan */}
-          <div className="flex items-center gap-2 rounded-full px-4 py-2 text-white">
+          <Link href="/my-plan">
+             <div className="flex items-center gap-2 rounded-full px-4 py-2 text-white">
             <span className="text-sm font-medium">Plan</span>
             <span className="flex h-7 min-w-7 items-center justify-center rounded-full bg-[#C2F800] px-2 font-bold text-black">
               0
             </span>
           </div>
+          </Link>
 
           {/* Saved */}
-          <div className="flex items-center gap-2 rounded-full  px-4 py-2 text-gray-800">
+          <Link href="/my-plan">
+            <div className="flex items-center gap-2 rounded-full  px-4 py-2 text-gray-800">
             <span className="text-sm text-gray-400 font-medium">Saved</span>
             <span className="flex h-7 min-w-7 items-center justify-center rounded-full border text-gray-400 px-2 font-bold">
               0
             </span>
           </div>
+          </Link>
         </div>
       </div>
     </div>
