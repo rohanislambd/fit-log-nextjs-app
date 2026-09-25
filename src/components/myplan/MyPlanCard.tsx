@@ -17,14 +17,14 @@ interface IMyPlanCardProps {
 const MyPlanCard = ({ workout, handleRemove , isTodayPlan}:IMyPlanCardProps) => {
   return (
     <div className="mt-4">
-      <div className="flex h-43 p-4 rounded-2xl bg-[#13161D]">
+      <div className="flex flex-col md:flex-row md:h-43 p-4 rounded-2xl bg-[#13161D]">
         <div>
           <Image
             src={workout.image}
             alt="workout"
             width={144}
             height={80}
-            className="rounded-2xl "
+            className="rounded-2xl w-full md:w-36 "
           ></Image>
         </div>
 
@@ -48,7 +48,7 @@ const MyPlanCard = ({ workout, handleRemove , isTodayPlan}:IMyPlanCardProps) => 
           </div>
         </div>
 
-        <div className="flex items-center space-x-4 ml-auto">
+        <div className="flex  items-center space-x-4 mt-3 md:mt-0 md:ml-auto ">
           <Link href={`/workouts/${workout.id}`}>
             <button className="btn  btn-outline rounded-3xl  ">
             View Details
