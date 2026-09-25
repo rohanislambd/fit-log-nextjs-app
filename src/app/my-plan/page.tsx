@@ -1,6 +1,6 @@
 "use client";
 import EmtyDataCard from "@/components/myplan/EmtyDataCard";
-import WorkoutCard from "@/components/workouts/WorkoutCard";
+import MyPlanCard from "@/components/myplan/MyPlanCard";
 import { workoutContext } from "@/context/WorkoutProvider";
 import { IWorkout } from "@/types/workout.type";
 import React, { useContext, useState } from "react";
@@ -69,7 +69,7 @@ const MyPlanPage = () => {
       <div>
                 {
                     currentWorkouts.length > 0 ? (
-                        currentWorkouts.map(plan => <WorkoutCard key={plan.id}  workout={plan}></WorkoutCard>)
+                        currentWorkouts.map((workout:IWorkout) => <MyPlanCard key={workout.id}  workout={workout}></MyPlanCard>)
                     ): ( <EmtyDataCard></EmtyDataCard> )
                 }
             </div>
