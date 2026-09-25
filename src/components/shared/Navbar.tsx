@@ -7,7 +7,7 @@ import React, { useContext } from "react";
 import { workoutContext } from "@/context/WorkoutProvider";
 
 const Navbar = () => {
-  const {todaysPlan} = useContext(workoutContext)
+  const {todaysPlan, savedWorkouts} = useContext(workoutContext)
   const pathname = usePathname();
 
   const links = (
@@ -87,7 +87,7 @@ const Navbar = () => {
             <div className="flex items-center gap-2 rounded-full  px-4 py-2 text-gray-800">
             <span className="text-sm text-gray-400 font-medium">Saved</span>
             <span className="flex h-7 min-w-7 items-center justify-center rounded-full border text-gray-400 px-2 font-bold">
-              0
+             {savedWorkouts.length}
             </span>
           </div>
           </Link>

@@ -1,7 +1,6 @@
 "use client";
 import { workoutContext } from "@/context/WorkoutProvider";
 import { IWorkout } from "@/types/workout.type";
-import { workerCreated } from "next/dist/build/swc/generated-native";
 import React, { useContext } from "react";
 import { MdOutlineToday } from "react-icons/md";
 import { Bounce, toast } from "react-toastify";
@@ -9,7 +8,7 @@ import { Bounce, toast } from "react-toastify";
 const AddToPlanButton = ({ workout }: { workout: IWorkout }) => {
   const { todaysPlan, setTodayPlan } = useContext(workoutContext);
 
-  console.log(todaysPlan, setTodayPlan);
+//   console.log(todaysPlan, setTodayPlan);
   const handleAddtoPlan = () => {
     const alreadyAdded = todaysPlan.some((item) => item.id === workout.id);
 

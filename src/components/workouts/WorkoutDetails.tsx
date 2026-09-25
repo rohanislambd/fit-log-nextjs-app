@@ -3,6 +3,7 @@ import Link from "next/link";
 import { IWorkout } from "@/types/workout.type";
 import { FaSave } from "react-icons/fa";
 import AddToPlanButton from "./AddToPlanButton";
+import SaveForLaterButton from "./SaveForLaterButton";
 
 type WorkoutDetailsProps = {
   workout: IWorkout;
@@ -181,13 +182,9 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
                 workout={workout}
                 ></AddToPlanButton>
 
-                <button
-                 
-                  className="rounded-lg flex items-center border border-[#33383c] px-6 py-3 text-center text-sm font-semibold text-gray-300 transition hover:border-lime-400 hover:text-lime-400"
-                > <FaSave />
-
-                   Save for later
-                </button>
+               <SaveForLaterButton
+                workout={workout}
+               ></SaveForLaterButton>
               </div>
 
             </div>
