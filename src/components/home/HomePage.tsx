@@ -7,7 +7,7 @@ const HomePage = async () => {
   const workouts = await getAllWorkouts();
 //   console.log(workouts);
   return (
-    <div id="workouts">
+    <div id="workouts" className="px-3">
       <div>
         <h2 className="text-3xl font-bold">THE LIBRARY</h2>
         <p className="text-gray-400">
@@ -15,7 +15,7 @@ const HomePage = async () => {
         </p>
       </div>
 
-      <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 ">
             {
                 workouts.map((workout:IWorkout) => <WorkoutCard key={workout.id} workout={workout}/>) 
             }
