@@ -1,4 +1,5 @@
 "use client";
+import EmtyDataCard from "@/components/myplan/EmtyDataCard";
 import WorkoutCard from "@/components/workouts/WorkoutCard";
 import { workoutContext } from "@/context/WorkoutProvider";
 import { IWorkout } from "@/types/workout.type";
@@ -36,8 +37,10 @@ const MyPlanPage = () => {
         </div>
       </div>
 
+       
+          {/* Tabs */}
       <div className="  my-8 max-w-[240px] rounded-xl bg-[#151921] p-1 ">
-        {/* Tabs */}
+      
         <div className=" flex gap-2  py-1">
           <button
             onClick={() => setActiveTab("today")}
@@ -63,13 +66,13 @@ const MyPlanPage = () => {
         </div>
       </div>
 
-      {/* <div>
+      <div>
                 {
-                    todaysPlan.length > 0 ? (
-                        todaysPlan.map(plan => <WorkoutCard key={plan.id}  workout={plan}></WorkoutCard>)
-                    ): <p>no data </p>
+                    currentWorkouts.length > 0 ? (
+                        currentWorkouts.map(plan => <WorkoutCard key={plan.id}  workout={plan}></WorkoutCard>)
+                    ): ( <EmtyDataCard></EmtyDataCard> )
                 }
-            </div> */}
+            </div>
     </div>
   );
 };
