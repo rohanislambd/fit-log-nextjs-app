@@ -5,8 +5,8 @@ import React from "react";
 import { CiStar } from "react-icons/ci";
 import { FaFire } from "react-icons/fa";
 import { FiClock } from "react-icons/fi";
-import { MdDone } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
+import MarkDoneButton from "./MarkDoneButton";
 
 interface IMyPlanCardProps {
     workout: IWorkout
@@ -56,12 +56,8 @@ const MyPlanCard = ({ workout, handleRemove , isTodayPlan}:IMyPlanCardProps) => 
           </Link>
 
           {
-            isTodayPlan && (
-                <button className="btn rounded-3xl text-black bg-[#CCFF00]">
-            <MdDone /> Mark as Done
-          </button>
-            )
-          }
+          isTodayPlan && <MarkDoneButton workoutName={workout.name} />
+           }   
 
           <button onClick={() => handleRemove(workout.id)}>
             <RxCross1 />

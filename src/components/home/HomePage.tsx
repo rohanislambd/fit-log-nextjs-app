@@ -16,7 +16,7 @@ const HomePage = async () => {
         </p>
       </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
         {workouts.map((workout: IWorkout) => (
           <Link key={workout.id} href={`/workouts/${workout.id}`}>
             <WorkoutCard workout={workout} />
