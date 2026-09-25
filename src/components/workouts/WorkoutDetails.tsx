@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IWorkout } from "@/types/workout.type";
-import { MdOutlineToday } from "react-icons/md";
 import { FaSave } from "react-icons/fa";
+import AddToPlanButton from "./AddToPlanButton";
 
 type WorkoutDetailsProps = {
   workout: IWorkout;
@@ -15,7 +15,7 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
 
         {/* Back Button */}
         <Link
-          href="/workouts"
+          href="/"
           className="mb-6 inline-flex items-center gap-2 text-sm text-gray-400 transition hover:text-lime-400"
         >
           ← Back to workouts
@@ -177,11 +177,9 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
 
               {/* ================= BUTTONS ================= */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <button
-                  className="rounded-lg flex items-center  bg-lime-400 px-6 py-3 text-sm font-bold text-black transition hover:bg-lime-300"
-                >
-                  <MdOutlineToday /> Add to today's plan
-                </button>
+                <AddToPlanButton
+                workout={workout}
+                ></AddToPlanButton>
 
                 <button
                  

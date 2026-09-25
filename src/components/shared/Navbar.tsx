@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "@/assets/logo.png";
-import React from "react";
+import React, { useContext } from "react";
+import { workoutContext } from "@/context/WorkoutProvider";
 
 const Navbar = () => {
+  const {todaysPlan} = useContext(workoutContext)
   const pathname = usePathname();
 
   const links = (
@@ -75,7 +77,7 @@ const Navbar = () => {
              <div className="flex items-center gap-2 rounded-full px-4 py-2 text-white">
             <span className="text-sm font-medium">Plan</span>
             <span className="flex h-7 min-w-7 items-center justify-center rounded-full bg-[#C2F800] px-2 font-bold text-black">
-              0
+              {todaysPlan.length}
             </span>
           </div>
           </Link>
