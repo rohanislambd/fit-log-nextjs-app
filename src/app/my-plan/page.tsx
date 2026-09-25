@@ -6,12 +6,22 @@ import { IWorkout } from "@/types/workout.type";
 import React, { useContext, useState } from "react";
 
 const MyPlanPage = () => {
-  const { todaysPlan, savedWorkouts } = useContext(workoutContext);
+  const { todaysPlan, setTodayPlan, savedWorkouts, setSavedWorkouts } = useContext(workoutContext);
   const [activeTab, setActiveTab] = useState<"today" | "saved">("today");
   const currentWorkouts = activeTab === "today" ? todaysPlan : savedWorkouts;
 
   const totalMinutes = currentWorkouts.reduce((total:number ,workout:IWorkout) => total + workout.duration, 0);
   const  totalCalories = currentWorkouts.reduce((total:number ,workout:IWorkout)=> total + workout.caloriesBurned ,0)
+
+
+  const handleRemove= (id:number) =>{
+    if(activeTab === "today"){
+        setTodayPlan(todaysPlan.filter((workout) => workout.id !== id));
+    }
+    else {
+      setSavedWorkouts(savedWorkouts.filter((workout) => workout.id !== id));
+    }
+  }
 
   return (
     <div className="container mx-auto">
@@ -69,7 +79,11 @@ const MyPlanPage = () => {
       <div>
                 {
                     currentWorkouts.length > 0 ? (
-                        currentWorkouts.map((workout:IWorkout) => <MyPlanCard key={workout.id}  workout={workout}></MyPlanCard>)
+                        currentWorkouts.map((workout:IWorkout) => <MyPlanCard
+                         key={workout.id} 
+                         isTodayPlan={activeTab === "today"}
+                          workout={workout} 
+                          handleRemove={handleRemove} ></MyPlanCard>)
                     ): ( <EmtyDataCard></EmtyDataCard> )
                 }
             </div>

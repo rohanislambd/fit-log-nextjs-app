@@ -1,5 +1,6 @@
 import { IWorkout } from "@/types/workout.type";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { CiStar } from "react-icons/ci";
 import { FaFire } from "react-icons/fa";
@@ -7,7 +8,13 @@ import { FiClock } from "react-icons/fi";
 import { MdDone } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
 
-const MyPlanCard = ({ workout }: { workout: IWorkout }) => {
+interface IMyPlanCardProps {
+    workout: IWorkout
+    handleRemove: (id:number) => void;
+    isTodayPlan: boolean
+}
+
+const MyPlanCard = ({ workout, handleRemove , isTodayPlan}:IMyPlanCardProps) => {
   return (
     <div className="mt-4">
       <div className="flex h-43 p-4 rounded-2xl bg-[#13161D]">
@@ -42,16 +49,21 @@ const MyPlanCard = ({ workout }: { workout: IWorkout }) => {
         </div>
 
         <div className="flex items-center space-x-4 ml-auto">
-          <button className="btn  btn-outline rounded-3xl  ">
+          <Link href={`/workouts/${workout.id}`}>
+            <button className="btn  btn-outline rounded-3xl  ">
             View Details
           </button>
+          </Link>
 
-          <button className="btn rounded-3xl text-black bg-[#CCFF00]">
-            {" "}
+          {
+            isTodayPlan && (
+                <button className="btn rounded-3xl text-black bg-[#CCFF00]">
             <MdDone /> Mark as Done
           </button>
+            )
+          }
 
-          <button>
+          <button onClick={() => handleRemove(workout.id)}>
             <RxCross1 />
           </button>
         </div>
