@@ -4,7 +4,7 @@ A modern, responsive workout planning web application built with **Next.js, Type
 
 ## 🌐 Live Demo
 
-🔗 **Live Demo:** Add your Vercel deployment link here
+🔗 **Live Demo:** https://fit-log-nextjs-app.vercel.app/
 
 ## 🛠️ Technologies Used
 
