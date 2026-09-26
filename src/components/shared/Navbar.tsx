@@ -32,7 +32,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="container mx-auto">
+    <div className="sticky top-0 bg-black z-1 border-b border-[#79666675]">
+      <div className="container mx-auto  ">
       <div className="navbar  shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
@@ -93,6 +94,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
+     </div>
     </div>
   );
 };

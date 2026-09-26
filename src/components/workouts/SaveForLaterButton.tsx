@@ -11,7 +11,7 @@ const SaveForLaterButton = ({ workout }: { workout: IWorkout }) => {
   const handSaveForLater = () => {
     const alreadyAdded = savedWorkouts.some((item) => item.id === workout.id) 
      if (alreadyAdded) {
-        toast.error(`${workout.name} is already added to today's plan`, {
+        toast.error(`${workout.name} is already added to Save for later`, {
       position: "top-center",
       autoClose: 3000,
       theme: "light",
@@ -23,7 +23,7 @@ const SaveForLaterButton = ({ workout }: { workout: IWorkout }) => {
     }
 
     setSavedWorkouts([...savedWorkouts, workout]);
-    toast.success(`${workout.name} Added to today's plan`, {
+    toast.success(`${workout.name} added to Save for later`, {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,

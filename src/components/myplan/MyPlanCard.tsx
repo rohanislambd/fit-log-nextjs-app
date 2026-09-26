@@ -56,7 +56,7 @@ const MyPlanCard = ({ workout, handleRemove , isTodayPlan}:IMyPlanCardProps) => 
           </Link>
 
           {
-          isTodayPlan && <MarkDoneButton workoutName={workout.name} />
+          isTodayPlan && <MarkDoneButton />
            }   
 
           <button onClick={() => handleRemove(workout.id)}>

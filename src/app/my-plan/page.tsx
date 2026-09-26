@@ -12,6 +12,20 @@ const MyPlanPage = () => {
   const [activeTab, setActiveTab] = useState<"today" | "saved">("today");
   const currentWorkouts = activeTab === "today" ? todaysPlan : savedWorkouts;
 
+
+  const [sortBy, setSortBy] =useState<"duration" | "calories" | "rating">("duration")
+
+  const sortedWorkouts = [...currentWorkouts].sort((a,b) => {
+     if(sortBy === "duration"){
+      return a.duration - b.duration;
+     }
+     if(sortBy === "calories"){
+      return a.caloriesBurned - b.caloriesBurned;
+     }
+     return b.rating - a.rating;
+  })
+
+
   const totalMinutes = currentWorkouts.reduce(
     (total: number, workout: IWorkout) => total + workout.duration,
     0,
@@ -81,36 +95,52 @@ const MyPlanPage = () => {
         </div>
       </div>
 
+      <div className="flex items-center justify-between">
+        {/* Tabs */}
       {/* Tabs */}
-      <div className="  my-8 max-w-[240px] rounded-xl bg-[#151921] p-1 ">
-        <div className=" flex gap-2  py-1">
-          <button
-            onClick={() => setActiveTab("today")}
-            className={`px-5  text-sm font-semibold ${
-              activeTab === "today"
-                ? " btn btn-active rounded-2xl  btn-warning"
-                : "text-[#8A92A0]"
-            }`}
-          >
-            Today's Plan
-          </button>
+<div className="my-8 w-full max-w-[340px] rounded-xl bg-[#151921] p-1">
+  <div className="flex w-full gap-1">
+    <button
+      onClick={() => setActiveTab("today")}
+      className={`flex-1 rounded-2xl px-3 py-2 text-xs sm:px-5 sm:text-sm font-semibold ${
+        activeTab === "today"
+          ? "btn btn-active btn-warning"
+          : "text-[#8A92A0]"
+      }`}
+    >
+      Today's Plan
+    </button>
 
-          <button
-            onClick={() => setActiveTab("saved")}
-            className={`px-5  text-sm font-semibold ${
-              activeTab === "saved"
-                ? "btn rounded-2xl px-8 btn-warning"
-                : "text-[#8A92A0]"
-            }`}
-          >
-            Saved
-          </button>
-        </div>
+    <button
+      onClick={() => setActiveTab("saved")}
+      className={`flex-1 rounded-2xl px-3 py-2 text-xs sm:px-8 sm:text-sm font-semibold ${
+        activeTab === "saved"
+          ? "btn btn-warning"
+          : "text-[#8A92A0]"
+      }`}
+    >
+      Saved
+    </button>
+  </div>
+</div>
+      {/* sort */}
+      <div className="flex flex-col md:flex w-70  space-x-4 items-center">
+        <h2 className=" text-2xl text-[#8A92A0] ">Sort By</h2>
+        <select 
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value as "duration" |"calories"| "rating")}
+         className="select w-[50%] rounded-2xl">
+           <option value="duration">Duration</option>
+           <option value="calories">Calories</option>
+           <option value="rating">Rating</option>
+        </select>
+      </div>
+
       </div>
 
       <div>
-        {currentWorkouts.length > 0 ? (
-          currentWorkouts.map((workout: IWorkout) => (
+        {sortedWorkouts.length > 0 ? (
+          sortedWorkouts.map((workout: IWorkout) => (
             <MyPlanCard
               key={workout.id}
               isTodayPlan={activeTab === "today"}
