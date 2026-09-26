@@ -72,13 +72,13 @@ const MyPlanPage = () => {
     <div>
       <div className="container mx-auto ">
         <div className="mx-3 md:mx-0">
-          <h2 className="text-[30px] text-white font-bold">MY PLAN</h2>
+          <h2 className="text-[30px] text-white font-bold mt-10">MY PLAN</h2>
           <p className="text-[14px] text-[8A92A0] ">
             Cap of five lifts for today. Finish them, then load more.
           </p>
         </div>
 
-        <div className=" mx-3 md:mx-0 min-h-[122px] mt-5 rounded-2xl bg-[#13161D]  py-6 px-6 flex items-center space-x-20  md:space-x-60  xl:space-x-100 ">
+        <div className=" mx-3 md:mx-0 min-h-30 mt-5 rounded-2xl bg-[#13161D]  py-6 px-6 flex items-center space-x-20  md:space-x-60  xl:space-x-100 ">
           <div>
             <p className=" text-[12px] text-[#8A92A0] ">Exercies</p>
             <p className="font-bold text-[36px] text-[#CCFF00] ">

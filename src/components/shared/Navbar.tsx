@@ -32,7 +32,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="sticky top-0 bg-black z-1 border-b border-[#79666675]">
+    <div className="sticky top-0 bg-black z-1 border-b border-[#292d30]">
       <div className="container mx-auto  ">
       <div className="navbar  shadow-sm">
         <div className="navbar-start">

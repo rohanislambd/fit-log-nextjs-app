@@ -1,7 +1,6 @@
 import WorkoutDetails from "@/components/workouts/WorkoutDetails";
 import { getAllWorkouts } from "@/lib/dataFatch";
 import { IWorkout } from "@/types/workout.type";
-import Image from "next/image";
 import React from "react";
 interface IWorkoutDetailsProps {
   params: Promise<{

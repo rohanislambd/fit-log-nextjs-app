@@ -3,7 +3,7 @@ import FooterLogo from "@/assets/logo.png";
 import Image from "next/image";
 const Footer = () => {
   return (
-    <div className=" bg-black border-t border-[#79666675]">
+    <div className=" bg-black border-t border-[#292d30]">
       <div className="flex justify-between  container mx-auto py-5">
         <div className="flex items-center space-x-2">
           <Image

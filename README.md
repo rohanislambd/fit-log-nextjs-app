@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏋️ Workout Planner
 
-## Getting Started
+A modern, responsive workout planning web application built with **Next.js, TypeScript, and Tailwind CSS**. Users can explore different workouts, view detailed workout information, create a daily workout plan, and save workouts for later.
 
-First, run the development server:
+## 🌐 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🔗 **Live Demo:** Add your Vercel deployment link here
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Next.js** – React framework
+* **React** – UI development
+* **TypeScript** – Type-safe development
+* **Tailwind CSS** – Styling and responsive design
+* **DaisyUI** – UI components
+* **React Icons** – Icons
+* **React Toastify** – Toast notifications
+* **Context API** – Workout plan state management
+* **Local Storage** – Persist workout plan data
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Key Features
 
-## Learn More
+### 1. 🏋️ Browse Workouts
 
-To learn more about Next.js, take a look at the following resources:
+Users can explore a collection of workouts and see important information such as:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Workout name
+* Category
+* Difficulty
+* Duration
+* Rating
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. 📋 Workout Details
 
-## Deploy on Vercel
+Each workout has a dedicated details page containing complete workout information, including:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Equipment
+* Target muscle
+* Exercise information
+* Instructions
+* Difficulty
+* Duration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 3. 📅 Today's Workout Plan
+
+Users can add workouts to their **Today's Plan** and manage their daily workout routine.
+
+### 4. 💾 Saved Workouts
+
+Users can save workouts for later and manage their saved workouts from the **My Plan** section.
+
+### 5. 🔍 Sorting & Responsive Design
+
+Users can sort workouts based on different criteria. The application is also fully responsive and works across:
+
+* 📱 Mobile
+* 📲 Tablet
+* 💻 Desktop
+
+## 🎯 Project Highlights
+
+* Reusable and modular React components
+* Type-safe application with TypeScript
+* Context API for global workout state
+* Persistent workout data using Local Storage
+* Responsive UI using Tailwind CSS
+* Dynamic routing with Next.js
+* Toast notifications for user feedback
+* Clean and modern user interface
+
+## 📂 Main Pages
+
+| Page             | Description                       |
+| ---------------- | --------------------------------- |
+| `/`              | Browse all workouts               |
+| `/workouts/[id]` | View workout details              |
+| `/my-plan`       | Manage today's and saved workouts |
+
+## 📌 Future Improvements
+
+* User authentication
+* Workout progress tracking
+* Custom workout creation
+* Weekly workout statistics
+* User profile and personalized recommendations
+
+## 👨‍💻 Author
+
+**Rohan Islam**
+
+Aspiring Web Developer | Building and Learning Every Day
+
+🔗 GitHub: https://github.com/rohanislambd

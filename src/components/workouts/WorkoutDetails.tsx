@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IWorkout } from "@/types/workout.type";
-import { FaSave } from "react-icons/fa";
 import AddToPlanButton from "./AddToPlanButton";
 import SaveForLaterButton from "./SaveForLaterButton";
 
@@ -13,7 +12,6 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
   return (
     <section className="min-h-screen bg-[#0b0d0f] px-4 py-10 text-white">
       <div className="mx-auto max-w-6xl">
-
         {/* Back Button */}
         <Link
           href="/"
@@ -24,9 +22,7 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
 
         {/* Main Card */}
         <div className="overflow-hidden rounded-2xl border border-[#25282b] bg-[#111417] shadow-2xl">
-
           <div className="grid lg:grid-cols-2">
-
             {/* ================= IMAGE ================= */}
             <div className="relative min-h-[350px] bg-[#181b1e] lg:min-h-[600px]">
               <Image
@@ -51,7 +47,6 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
 
             {/* ================= CONTENT ================= */}
             <div className="p-6 sm:p-8 lg:p-10">
-
               {/* Category */}
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-lime-400">
                 Strength Training
@@ -79,79 +74,84 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
                 ))}
               </div>
 
-              {/* Divider */}
-              <div className="my-7 h-px bg-[#292d30]" />
+              
+             <div className="my-3 h-px " />
 
               {/* Workout Information */}
-              <div className="grid grid-cols-2 gap-x-6 gap-y-5">
-
-                <div>
-                  <p className="text-xs uppercase text-gray-500">
+              <div className="overflow-hidden rounded-xl border border-[#242936] bg-[#151921]">
+                {/* Equipment */}
+                <div className="flex items-center justify-between border-b border-[#242936] px-4 py-3">
+                  <p className="text-[10px] font-semibold uppercase text-gray-500">
                     Equipment
                   </p>
-                  <p className="mt-1 text-sm font-semibold">
+                  <p className="text-xs font-medium text-white">
                     {workout.equipment}
                   </p>
                 </div>
 
-                <div>
-                  <p className="text-xs uppercase text-gray-500">
+                {/* Difficulty */}
+                <div className="flex items-center justify-between border-b border-[#242936] px-4 py-3">
+                  <p className="text-[10px] font-semibold uppercase text-gray-500">
                     Difficulty
                   </p>
-                  <p className="mt-1 text-sm font-semibold">
+                  <p className="text-xs font-medium text-white">
                     {workout.difficulty}
                   </p>
                 </div>
 
-                <div>
-                  <p className="text-xs uppercase text-gray-500">
-                    Duration
-                  </p>
-                  <p className="mt-1 text-sm font-semibold">
-                    {workout.duration} min
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase text-gray-500">
-                    Calories
-                  </p>
-                  <p className="mt-1 text-sm font-semibold">
-                    {workout.caloriesBurned} kcal
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase text-gray-500">
+                {/* Sets */}
+                <div className="flex items-center justify-between border-b border-[#242936] px-4 py-3">
+                  <p className="text-[10px] font-semibold uppercase text-gray-500">
                     Sets
                   </p>
-                  <p className="mt-1 text-sm font-semibold">
+                  <p className="text-xs font-medium text-white">
                     {workout.sets}
                   </p>
                 </div>
 
-                <div>
-                  <p className="text-xs uppercase text-gray-500">
+                {/* Reps */}
+                <div className="flex items-center justify-between border-b border-[#242936] px-4 py-3">
+                  <p className="text-[10px] font-semibold uppercase text-gray-500">
                     Reps
                   </p>
-                  <p className="mt-1 text-sm font-semibold">
+                  <p className="text-xs font-medium text-white">
                     {workout.reps}
                   </p>
                 </div>
 
-              </div>
+                {/* Duration */}
+                <div className="flex items-center justify-between border-b border-[#242936] px-4 py-3">
+                  <p className="text-[10px] font-semibold uppercase text-gray-500">
+                    Duration
+                  </p>
+                  <p className="text-xs font-medium text-white">
+                    {workout.duration} min
+                  </p>
+                </div>
 
-              {/* Rating */}
-              <div className="mt-7 flex items-center gap-3">
-                <span className="text-lg text-yellow-400">★</span>
+                {/* Calories */}
+                <div className="flex items-center justify-between border-b border-[#242936] px-4 py-3">
+                  <p className="text-[10px] font-semibold uppercase text-gray-500">
+                    Calories
+                  </p>
+                  <p className="text-xs font-medium text-white">
+                    {workout.caloriesBurned} kcal
+                  </p>
+                </div>
 
-                <span className="font-bold">
-                  {workout.rating}
-                </span>
+                {/* Rating */}
+                <div className="flex items-center justify-between px-4 py-3">
+                  <p className="text-[10px] font-semibold uppercase text-gray-500">
+                    Rating
+                  </p>
 
-                <span className="text-sm text-gray-500">
-                  Workout rating
-                </span>
+                  <div className="flex items-center gap-1">
+                    <span className="text-yellow-400">★</span>
+                    <span className="text-xs font-medium text-white">
+                      {workout.rating}
+                    </span>
+                  </div>
+                </div>
               </div>
 
               {/* ================= INSTRUCTIONS ================= */}
@@ -178,15 +178,10 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
 
               {/* ================= BUTTONS ================= */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <AddToPlanButton
-                workout={workout}
-                ></AddToPlanButton>
+                <AddToPlanButton workout={workout}></AddToPlanButton>
 
-               <SaveForLaterButton
-                workout={workout}
-               ></SaveForLaterButton>
+                <SaveForLaterButton workout={workout}></SaveForLaterButton>
               </div>
-
             </div>
           </div>
         </div>
