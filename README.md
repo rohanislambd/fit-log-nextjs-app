@@ -16,8 +16,7 @@ A modern, responsive workout planning web application built with **Next.js, Type
 * **React Icons** – Icons
 * **React Toastify** – Toast notifications
 * **Context API** – Workout plan state management
-* **Local Storage** – Persist workout plan data
-
+* 
 ## ✨ Key Features
 
 ### 1. 🏋️ Browse Workouts
@@ -76,13 +75,7 @@ Users can sort workouts based on different criteria. The application is also ful
 | `/workouts/[id]` | View workout details              |
 | `/my-plan`       | Manage today's and saved workouts |
 
-## 📌 Future Improvements
 
-* User authentication
-* Workout progress tracking
-* Custom workout creation
-* Weekly workout statistics
-* User profile and personalized recommendations
 
 ## 👨‍💻 Author
 
