@@ -61,7 +61,6 @@ Users can sort workouts based on different criteria. The application is also ful
 * Reusable and modular React components
 * Type-safe application with TypeScript
 * Context API for global workout state
-* Persistent workout data using Local Storage
 * Responsive UI using Tailwind CSS
 * Dynamic routing with Next.js
 * Toast notifications for user feedback
